@@ -1,0 +1,26 @@
+{
+  "image"   : [
+    {
+      "name"  : "iperf_vm",
+      "version" : "1.0",
+      "start_sector"  : 32,
+      "bootargs_start": 1,
+      "ssid" : "innotest",
+      "passphrase" : "123467890",
+      "bootargs_end" : 1
+    },
+    {
+      "name"  : "hello_world",
+      "version" : "1.0",
+      "start_sector"  : 232,
+      "bootargs_start": 1,
+      "ssid" : "innotest",
+      "passphrase" : "123467890",
+      "bootargs_end" : 1
+    }
+    ],
+    "baudrate"    : 2560000,
+    "timeout" : 0,
+    "verbose" : 1
+}
+

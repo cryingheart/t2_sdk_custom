@@ -1,0 +1,34 @@
+This AWS IOT SDK ported to T2. This is a combined code with AWS IOT lib, external code used by AWS(TLS and json) and t2 specific 
+
+
+Prerequests
+------------------
+
+
+
+Folder structure
+------------------
+- src/aws_iot_sdk
+	- aws_core	 : aws_core sdk client code
+	- external   : 3rd party lib used in this. example jsmn
+	- talaria_t2 : talaria_t2 platform specific implementation
+- lib	 :	contains the libary generated for aws_iot_sdk
+- src/cert   :  contains the client certificate
+- src/sample :  Contains aws samples like subcribe, publish, job and shadow
+
+How to compile
+-------------------
+make clean all 
+
+
+pre-conditions
+--------------------
+To test the code, aws iot account has to be created
+	12 months free*(conditions apply) account  can be created from 
+	https://portal.aws.amazon.com/billing/signup#/start
+
+	then create you things and generate client certificate
+	refer tutorial for aws AWS IOT 
+	https://www.youtube.com/watch?v=BfvieRwulvc
+
+	Things certificates has to be placed in cert/cert.c file 

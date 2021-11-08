@@ -1,0 +1,35 @@
+{
+  "image"   : [
+    {
+      "name"  : "fota",
+      "version" : "1.0",
+      "start_sector"  : 32,
+      "bootargs_start": 1,
+      "ssid" : "inno_test",
+      "passphrase" : "1234567890",
+      "bootargs_end" : 1
+    },
+    {
+      "name"  : "test_app",
+      "version" : "1.0",
+      "start_sector"  : 154,
+      "bootargs_start": 1,
+      "ssid" : "inno_test",
+      "passphrase" : "1234567890",
+      "bootargs_end" : 1
+    },
+    {
+      "name"  : "test_app",
+      "version" : "0.0",
+      "start_sector"  : 230,
+      "bootargs_start": 1,
+      "ssid" : "inno_test",
+      "passphrase" : "1234567890",
+      "bootargs_end" : 1
+    }
+    ],
+    "baudrate"    : 2560000,
+    "timeout" : 0,
+    "verbose" : 1
+}
+

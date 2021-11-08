@@ -1,0 +1,5 @@
+1. Command to Run
+ sudo python3 ./script/boot.py --device /dev/ttyUSB2    aws/jobs_sample.elf   ssid=<wifi-id> passphrase=<wifi-password>  aws_host=< aws end point xxxxxxxxxx-ats.iot.us-west-2.amazonaws.com> heapsize=120000 thing_name=<name of the thing>
+
+2. create the job from aws console and run the elf in t2.
+

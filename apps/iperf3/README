@@ -1,0 +1,46 @@
+This basic tutorial is intended for <Testing personnel> to use as an help-guide
+
+ BOOTARG_INT("iperf3.extra_info", "extra info", "print extra information");
+
+#General Use
+
+#1 - Loading Iperf3.elf to T2/H0/H1 (assuming you are on firmware directory)
+$python script/boot.py --speed 2456700 --reset=evk42 apps/iper3.elf ssid=TP-Link_CDFC passphrase=xpto,adgxp hwaddr=02:03:04:05:06:0a
+
+where <ssid> is the AP name you intend T2/h0/H1 to connect to, and  <passphrase> is the passphrase of the AP and finally, <hwaddr> (default) the HW address you inted the device to use (allows for getting same IP address).
+
+OBS: If you NEED EXTRA INFO PRINTOUTS on server side, USE BOOTARG <iperf3.extra_info> as
+     iperf3.extra_info=1
+
+#2 - On the client side:
+    #2.1 - DOWNLINK  and UPLINK TCP traffic ONLY (suppose T2 is on 172.28.49.100)
+          ./iperf3 -c 172.28.49.100  (runs forever)
+          ./iperf3 -c 172.28.49.100 -R (uplink)
+
+          #2.1.1 - Specifying time to run
+             ./iperf3 -c 172.28.49.100 -t100 (runs for 100 seconds)
+             ./iperf3 -c 172.28.49.100 -t100 -R
+
+          #2.1.1 - Specifying NUMBER of STREAMS and time to run
+             ./iperf3 -c 172.28.49.100 -Px -t100 (runs for 100 seconds, and x - num streams)
+             ./iperf3 -c 172.28.49.100 -Px -t100 -R (uplink)
+
+    #2.2 - DOWNLINK  and UPLINK UDP traffic ONLY (suppose T2 is on 172.28.49.100)
+           ./iperf3 -c 172.28.49.100 -u (runs forever)
+           ./iperf3 -c 172.28.49.100 -u -R (uplink)
+
+          #2.1.1 - Specifying time to run
+             ./iperf3 -c 172.28.49.100 -u -t100 (runs for 100 seconds)
+             ./iperf3 -c 172.28.49.100 -u -t100 -R (uplink)
+
+          #2.1.1 - Specifying NUMBER of STREAMS time to run
+             ./iperf3 -c 172.28.49.100 -u -Px -t100 (100 seconds, and x - number streams)
+             ./iperf3 -c 172.28.49.100 -u -Px -t100 -R
+
+    #2.3 - BIDIRECTIONAL traffic
+         ./iperf3 -c 172.28.49.100 --bidir (TCP)
+         ./iperf3 -c 172.28.49.100 -u --bidir (UDP)
+
+         #2.3.1 - Adding Time
+             ./iperf3 -c 172.28.49.100 --bidir -t100 (TCP)
+             ./iperf3 -c 172.28.49.100 -u --bidir -t100 (UDP)

@@ -1,0 +1,5 @@
+1. Command to Run
+ sudo python3 ./script/boot.py --device /dev/ttyUSB2    aws/sample_pub_sub.elf   ssid=<wifi-id> passphrase=<wifi-password>  aws_host=< aws end point xxxxxxxxxx-ats.iot.us-west-2.amazonaws.com> heapsize=120000 
+
+2. go to the thing in aws console , test->subscribe to the test topic default: inno_test/data and publish data to the control topic inno_test/ctrl
+
