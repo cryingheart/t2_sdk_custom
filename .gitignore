@@ -1,5 +1,11 @@
 # http://www.gnu.org/software/automake
 
+*.map
+*.o
+*.d
+*.elf
+*.strip
+
 Makefile.in
 /ar-lib
 /mdate-sh
